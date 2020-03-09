@@ -8,11 +8,20 @@
 
 .eventCard {
   display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  /* align-items: flex-start; */
+  justify-content: flex-start;
+  border: 1px solid black;
+  margin: 2% 20%;
+  padding: 1%;
 }
 
 img {
-  max-width: 200px;
+  max-width: 30%;
+  margin: auto 0;
+  padding-right: 5%;
+}
+
+.cardContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
