@@ -1,4 +1,4 @@
-const populateChartData = data => {
+const PopulateChartData = data => {
   const refObj = makeRefObj(data);
 
   const labels = Object.keys(refObj);
@@ -6,7 +6,7 @@ const populateChartData = data => {
   const dataArray = [];
 
   labels.forEach(label => {
-    const dataObj = { x: 1, y: 0, label: '' };
+    const dataObj = { x: 1, y: 0, label: "" };
     if (dataArray.length !== 0) {
       dataObj.x = dataObj.x + dataArray.length;
     }
@@ -32,4 +32,4 @@ const makeRefObj = data => {
   return refObj;
 };
 
-export { makeRefObj, populateChartData };
+export { makeRefObj, PopulateChartData };

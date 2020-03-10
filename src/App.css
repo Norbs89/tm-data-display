@@ -25,3 +25,31 @@ img {
   flex-direction: column;
   justify-content: center;
 }
+.openChart {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+}
+
+.popup {
+  overflow: auto;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 20%;
+  left: 20%;
+  right: 20%;
+  bottom: 20%;
+  border-radius: 10;
+  border-width: 1;
+  border-color: #cdf2c9;
+  background-color: chartreuse;
+}
+
+.popup__text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 3rem;
+}
