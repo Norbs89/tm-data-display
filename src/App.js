@@ -1,7 +1,7 @@
 import React from "react";
 import Modal from "react-modal";
 import "./App.css";
-import { VictoryPie, VictoryContainer } from "victory";
+import { VictoryPie } from "victory";
 import DisplayEvent from "./components/displayEvent";
 import { PopulateChartData } from "./utils/utils";
 
@@ -63,24 +63,6 @@ class App extends React.Component {
       </div>
     );
   }
-}
-
-{
-  /* <Modal className="popup" ariaHideApp={false} isOpen={isOpen}>
-  <div className="popup__text">
-    <h2>{drinkName}</h2>
-    <p>{outputRecipe}</p>
-    {userInput.extra === extraOffered || (
-      <p>
-        top tip: the user choose {userInput.extra} but we want to offer{" "}
-        {extraOffered}
-      </p>
-    )}
-  </div>
-  <button className="modalButton" onClick={this.closePopup}>
-    Close
-          </button>
-</Modal> */
 }
 
 export default App;
