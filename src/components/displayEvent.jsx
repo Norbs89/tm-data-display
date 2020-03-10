@@ -1,9 +1,9 @@
-import React from 'react';
+import React from "react";
 
 const DisplayEvent = props => {
   const eventDetails = props.events.map(event => (
     <div key={event.id} className="eventCard">
-      <img src={event.images[1].url} alt="" />
+      <img src={event.images[0].url} alt="" />
       <div className="allText">
         <h2>{event.name}</h2>
         <div className="eventDetails">

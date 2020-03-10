@@ -1,14 +1,21 @@
-import React from 'react';
-import './App.css';
+import React from "react";
+import "./App.css";
+import { VictoryPie } from "victory";
 // import event from './hardcode';
-import DisplayEvent from './components/displayEvent';
+import DisplayEvent from "./components/displayEvent";
+
+const data = [
+  { x: 1, y: 6, label: "one" },
+  { x: 2, y: 3, label: "two" },
+  { x: 3, y: 5, label: "three" }
+];
 
 class App extends React.Component {
-  state = { events: [], venues: [], attractions: [], isLoading: true };
+  state = { events: [], isLoading: true };
 
   componentDidMount = () => {
     fetch(
-      'https://app.ticketmaster.com/discovery/v2/suggest/?countryCode=GB&size=5&sort=date,asc&apikey=c4kXaqgAq1waXtfVKdDY873kHV6wfGEi'
+      "https://app.ticketmaster.com/discovery/v2/events/?countryCode=GB&size=50&sort=date,asc&city=manchester&apikey=c4kXaqgAq1waXtfVKdDY873kHV6wfGEi"
     )
       .then(res => {
         return res.json();
@@ -16,8 +23,6 @@ class App extends React.Component {
       .then(data => {
         this.setState({
           events: data._embedded.events,
-          venues: data._embedded.venues,
-          attractions: data._embedded.attractions,
           isLoading: false
         });
       });
@@ -29,6 +34,7 @@ class App extends React.Component {
         <h1 className="header">
           <u>CURRENT EVENTS</u>
         </h1>
+        <VictoryPie startAngle={-90} endAngle={90} data={data} />
         {this.state.events && <DisplayEvent events={this.state.events} />}
       </div>
     );
